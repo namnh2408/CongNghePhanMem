@@ -1,0 +1,20 @@
+id,fullname,price,quantity,date_add,images,description,status,cate_id
+1,Lập trình hệ thống nhúng với Raspberry,125,300,2020-12-12,images/lapTrinh/2.jpg,Lập trình hệ thống nhúng,1,3
+2,Lập trình với C#,97,250,2020-12-12,images/lapTrinh/3.jpg,"Lập trình cơ bản với C#, winform",1,3
+3,Lập trình hệ thống thương mại điện tử,101,500,2020-12-14,images/lapTrinh/4.jpg,"Chức năng, nghiệp vụ của thương mại điện tử",1,3
+4,Arduino và lậ trình IoT,87,300,2020-12-15,images/lapTrinh/5.jpg,Internet of Things,1,3
+5,Lập trình windows form và web form,95,500,2020-12-16,images/lapTrinh/6.jpg,C#,1,3
+6,Hành trang lập trình,113.45,340,2020-12-17,images/lapTrinh/7.jpg,Cẩm nang về lập trình,1,3
+7,Nhà giả kim,132.5,500,2020-12-18,images/tieuThuyet/1.jpg,...,1,1
+8,Trường ca Achilles,150.6,400,2020-12-19,images/tieuThuyet/2.jpg,...,1,1
+9,Ngàn mặt trời rực rỡ,250.678,540,2020-12-20,images/tieuThuyet/3.jpg,...,0,1
+10,Cuốn theo chiều gió,214.45,456,2020-12-21,images/tieuThuyet/4.jpg,...,1,1
+11,Chữa lành đứa trẻ bên trong bạn,100,500,2021-01-01,images/tamLy/1.jpg,...,1,2
+12,"Anh là ai, tôi là ai",100,400,2021-01-01,images/tamLy/2.jpg,...,1,2
+13,Sang chấn tâm lý,100,450,2021-01-01,images/tamLy/3.jpg,...,1,2
+14,Sổ tay nhà thôi miên,100,500,2021-01-01,images/tamLy/4.jpg,...,0,2
+15,5 phút diệu kỳ,100,450,2021-01-01,images/tamLy/5.jpg,...,0,2
+16,Chinh phục đề thi vào lớp 10 chuyên Anh,120,500,2021-01-01,images/sachThamKhao/1.jpg,...,1,4
+17,Luyện thi Ngữ văn lớp 10,120,500,2021-01-01,images/sachThamKhao/2.jpg,...,1,4
+18,Bồi dưỡng Anh văn,120,500,2021-01-01,images/sachThamKhao/3.jpg,...,1,4
+19,Luyện đề hoá học 12,120,500,2021-01-01,images/sachThamKhao/4.jpg,...,1,4

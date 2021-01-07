@@ -1,0 +1,68 @@
+{% extends 'base/base_index.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block body %}
+    <div class="women-product">
+		<div class=" w_content">
+			<div class="women">
+				<a href="#"><h4>All products:<span> {{ counts }} items</span> </h4></a>
+				<ul class="w_nav">
+					<li>Sort : </li>
+			     	<li><a class="active" href="#">popular</a></li> |
+			     	<li><a href="#">price: Low High </a></li>
+
+			        <div class="clearfix"> </div>
+			    </ul>
+			     <div class="clearfix"> </div>
+			</div>
+		</div>
+		<!-- grids_of_4 -->
+		<div class="grid-product">
+            {% for p in products %}
+                    {% if p.status != 0 %}
+                        <div class="col-md-4 chain-grid">
+                            <a href="{{ url_for('book_detail', product_id = p.id )}}">
+                                <img class="img-responsive chain" src="{{ url_for('static', filename= p.images )}}" alt="{{ p.fullname }}" />
+                            </a>
+                            <div class="grid-chain-bottom">
+                                <h6><a href="{{url_for('book_detail', product_id = p.id )}}"> {{ p.fullname }}</a></h6>
+                                <div class="star-price">
+                                    <div class="dolor-grid">
+                                        <span class="actual"> {{ p.price }}</span>
+
+                                    </div>
+                                    <a class="now-get get-cart" href=""
+                                       onclick= "addToCart({{p.id}}, '{{ p.fullname }}', {{ p.price}})">ADD TO CART</a>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-md-4 chain-grid">
+                            <a href="{{ url_for('book_detail', product_id = p.id )}}">
+                                <img class="img-responsive chain" src="{{ url_for('static', filename= p.images )}}" alt="{{ p.fullname }}" />
+                            </a>
+                            <div style="background: #c4e3f3" class="grid-chain-bottom">
+                                <h6><a href="{{ url_for('book_detail', product_id = p.id )}}"> {{ p.fullname }}</a></h6>
+                                <div class="star-price">
+                                    <div class="dolor-grid">
+                                        <span class="actual"> {{ p.price }}</span>
+
+                                    </div>
+                                    <h6 style="color: red " class="text-right"> <i>Ngừng bán</i></h6>
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if p.id % 3 == 0 %}
+						<div class="clearfix"> </div>
+					{% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

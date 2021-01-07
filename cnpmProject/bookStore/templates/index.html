@@ -1,0 +1,47 @@
+{% extends 'base/base_index.html' %}
+
+{% block title %}
+    Home - Quan Ly Nha Sach
+{% endblock %}
+
+{% block body %}
+<div class="shoes-grid">
+
+			<div class="products">
+				<h5 class="latest-product">LATEST PRODUCTS</h5>
+
+				<a class="view-all" href="{{url_for('product_list')}}">VIEW ALL<span> </span></a>
+			</div>
+
+			<div class="product-left">
+				{% for p in products %}
+					<div class="col-md-4 chain-grid">
+						<a href="{{ url_for('book_detail', product_id = p.id)}}">
+							<img class="img-responsive chain" src="{{ url_for('static', filename= p.images )}}" alt="{{ p.fullname }}" />
+						</a>
+						<span class="star"> </span>
+						<div class="grid-chain-bottom">
+							<h6><a href="{{url_for('book_detail', product_id = p.id )}}"> {{ p.fullname }}</a></h6>
+							<div class="star-price">
+								<div class="dolor-grid">
+									<span class="actual"> {{ p.price }}</span>
+
+								</div>
+
+								<a class="now-get get-cart" href=href=""
+								   onclick= "addToCart({{p.id}}, '{{ p.fullname }}', {{ p.price}})">ADD TO CART</a>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>
+					{% if p.id % 3 == 0 %}
+						<div class="clearfix"> </div>
+					{% endif %}
+				{% endfor %}
+			</div>
+
+<!--	--------------------------------------------------   -->
+
+</div>
+
+{% endblock %}

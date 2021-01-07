@@ -1,0 +1,56 @@
+{% extends 'base/base_index.html' %}
+
+{% block body %}
+<div class="register">
+    <form method="post" action="{{ url_for('register')}}">
+        <div class=" register-top-grid">
+            <h3>REGISTER INFORMATION</h3>
+
+            <div> <span></span></div>
+            <div class="msg" style="color: mediumblue"> {{ msg }}</div>
+            <div> <span></span></div>
+
+            <div class="mation">
+                <span>Full Name <label>*</label></span>
+                <input type="text" name="fullname">
+
+                <span>Username <label>*</label></span>
+                <input type="text" name="username">
+
+                <span>Email Address <label>*</label></span>
+                <input type="text" name="email">
+
+                <span>Phone number <label>*</label></span>
+                <input type="text" name="phone">
+
+                <span>Address <label>*</label></span>
+                <input type="text" name="address">
+
+<!--                <span>Avatar <label>*</label></span>-->
+<!--                <input type="file" id="avatar" name="avatar">-->
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+        <div class=" register-bottom-grid">
+            <h3>LOGIN INFORMATION</h3>
+            <div class="form-group">
+
+                <span>Password <label>*</label></span>
+                <input type="password" name="pword">
+                <span></span>
+                <span>Confirm Password <label>*</label></span>
+                <input type="password" name="repword">
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+        <div class="register-but">
+            <input type="submit" value="Register">
+            <div class="clearfix"> </div>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

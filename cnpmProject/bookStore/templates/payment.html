@@ -1,0 +1,51 @@
+{% extends 'base/base_index.html' %}
+
+{% block title %}
+    Thanh toan - BookStore
+{% endblock %}
+
+{% block body %}
+<div class="shoes-grid">
+    <div class="product-left">
+        <h1 class="text-center text-success">THANH TOÁN GIỎ HÀNG</h1>
+        <div class="alert alert-warning">
+            <h3>Số lượng sản phẩm: {{ cart_info.total_quantity }}</h3>
+            <h3>Tổng tiền: {{ '{:,.1f}'.format(cart_info.total_amount) }} VNĐ</h3>
+        </div>
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>Name product</th>
+                <th>Price</th>
+                <th>Amount</th>
+            </tr>
+            {% if 'cart' in session %}
+            {% for p in session['cart'].values() %}
+            <tr>
+                <td>{{ p.id }}</td>
+                <td>{{ p.fullname }}</td>
+                <td>{{ p.price }}</td>
+                <td>
+                    <div class="form-group">
+                        <input type="number" class="form-control" value="{{ p.quantity }}" />
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4">Không có sản phẩm nào trong giỏ!</td>
+            </tr>
+            {% endif %}
+        </table>
+        <input type="button"
+               onclick="pay()"
+               value="Thanh toán"
+               class="btn btn-danger" />
+
+        <div><a class="text-right" style="color: darkblue" href="{{url_for('index')}}">Quay lai</a></div>
+    </div>
+
+</div>
+
+{% endblock %}

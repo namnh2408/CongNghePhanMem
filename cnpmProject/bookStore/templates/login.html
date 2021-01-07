@@ -1,0 +1,36 @@
+{% extends 'base/base_index.html' %}
+
+{% block body %}
+    <div class="account_grid">
+        <div class=" login-right">
+            <h3>LOGIN CUSTOMERS</h3>
+
+            <form method="post" action="{{url_for('login_usr')}}">
+                <div class="msg" style="color: blue">{{ message }} </div>
+
+                <div>
+                    <span>Username <label>*</label></span>
+					<input class="form-control" type="text" placeholder="Enter username..." name="uname">
+                </div>
+
+                <div>
+					<span>Password <label>*</label></span>
+					<input class="form-control" type="password" placeholder="Enter password..." name="pword">
+                </div>
+
+                <a class="forgot" href="#"> Forgot Your Password? </a>
+                <input type="submit" value="Login">
+
+            </form>
+        </div>
+
+        <div class=" login-left">
+            <h3>NEW CUSTOMERS</h3>
+            <p>
+                If you haven't an account, click below button now.
+            </p>
+            <a class="acount-btn" href="{{ url_for('register') }}">Create an Account</a>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+{% endblock %}

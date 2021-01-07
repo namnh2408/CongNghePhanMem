@@ -1,0 +1,34 @@
+{% extends 'base/base_index.html' %}
+
+{% block body %}
+<div class="register">
+    <form method="post" action="{{ url_for('register')}}">
+        <div class=" register-top-grid">
+            <h3>PERSONAL INFORMATION</h3>
+        {% if current_user.is_authenticated %}
+            <div class="mation">
+                <span>Full Name </span>
+                <input type="text" name="fullname" value="{{ info[1]}}">
+
+                <span>Email Address </span>
+                <input type="text" name="email" value="{{ info[2]}}">
+
+                <span>Phone number </span>
+                <input type="text" name="phone" value="{{ info[3]}}">
+
+                <span>Address </span>
+                <input type="text" name="address" value="{{ info[4]}}">
+
+            </div>
+            <div class="clearfix"> </div>
+            {% endif %}
+        </div>
+
+<!--        <div class="register-but">-->
+<!--            <input type="submit"  value="Update">-->
+<!--            <div class="clearfix"> </div>-->
+<!--        </div>-->
+    </form>
+
+</div>
+{% endblock %}
